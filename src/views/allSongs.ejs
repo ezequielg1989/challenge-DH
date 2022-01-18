@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <ul>
+      <% songs.forEach(function(song){ %>
+        <%- include('partials/song.ejs',{song:song}) %> 
+        <% }); %>
+          
+    </ul>
+  </body>
+</html>
