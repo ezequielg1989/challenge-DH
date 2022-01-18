@@ -39,7 +39,7 @@ const songModel= {
     },
     getAllGeneros: async () => {
         try {
-            const results = await sequelize.query('SELECT count(genero_id),generos.name FROM  canciones INNER JOIN generos ON genero_id = generos.id GROUP BY genero_id', { type: sequelize.QueryTypes.SELECT });
+            const results = await sequelize.query('SELECT generos.name AS genero,count(genero_id) AS cantidad  FROM  canciones INNER JOIN generos ON genero_id = generos.id GROUP BY generos.name', { type: sequelize.QueryTypes.SELECT });
             return results
         } catch (error) {
             console.log(`fallo traer generos de la DB ${error.message}`);
